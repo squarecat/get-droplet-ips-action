@@ -16,7 +16,10 @@ try {
     })
     .then((drops) => {
       console.log(`Found ${drops.length} matching droplets`);
-      return drops.map((d) => d.networks.v4[0].ip_address);
+      // find the public ips
+      return drops.map((d) => {
+        return d.networks.v4.find((i) => i.type === "public").ip_address;
+      });
     })
     .then((ips) => {
       core.setOutput("server_ips", ips || []);
