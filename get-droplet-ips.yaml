@@ -1,0 +1,16 @@
+name: 'Get Droplet IPs'
+description: 'Get the IPs to deploy to using tags'
+inputs:
+  digital-ocean-key:
+    description: 'The API KEY for DO'
+    required: true
+  tags:
+    description: The tags of the servers
+    required: true
+
+outputs:
+  server_ips: # id of output
+    description: 'The IPs that match the provided tags'
+runs:
+  using: 'node16'
+  main: 'index.js'

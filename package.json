@@ -1,0 +1,11 @@
+{
+  "name": "@squarecat/github-get-droplet-ips",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "James Ivings <james@squarecat.io>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "digitalocean": "^1.2.1"
+  }
+}
