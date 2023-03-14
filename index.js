@@ -16,7 +16,7 @@ try {
     })
     .then((drops) => {
       console.log(`Found ${drops.length} matching droplets`);
-      return drops.map((d) => d[0].networks.v4[0].ip_address);
+      return drops.map((d) => d.networks.v4[0].ip_address);
     })
     .then((ips) => {
       core.setOutput("server_ips", ips || []);
