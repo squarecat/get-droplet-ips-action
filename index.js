@@ -5,6 +5,7 @@ try {
   // `who-to-greet` input defined in action metadata file
   const apiKey = core.getInput("digital-ocean-key");
   const tag = core.getInput("tag");
+  const networkType = core.getInput("network_type") || "public";
   const client = digitalocean.client(apiKey);
 
   console.log(`Fetching droplets for tag ${JSON.stringify(tag)}`);
@@ -16,9 +17,9 @@ try {
     })
     .then((drops) => {
       console.log(`Found ${drops.length} matching droplets`);
-      // find the public ips
+
       return drops.map((d) => {
-        return d.networks.v4.find((i) => i.type === "public").ip_address;
+        return d.networks.v4.find((i) => i.type === networkType).ip_address;
       });
     })
     .then((ips) => {

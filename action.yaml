@@ -7,6 +7,9 @@ inputs:
   tag:
     description: The tag of the servers to fetch
     required: true
+  network_type:
+    description: public or private
+    default: public
 
 outputs:
   server_ips: # id of output
