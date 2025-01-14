@@ -5,7 +5,7 @@ try {
   // `who-to-greet` input defined in action metadata file
   const apiKey = core.getInput("digital-ocean-key");
   const tag = core.getInput("tag");
-  const networkType = core.getInput("network_type") || "public";
+  const networkType = core.getInput("network-type") || "public";
   const client = digitalocean.client(apiKey);
 
   console.log(`Fetching droplets for tag ${JSON.stringify(tag)}`);
