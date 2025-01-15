@@ -13,7 +13,7 @@ steps:
       network-type: public                             # fetch "public" or "private" IPs
 ```
 
-The IPs will be output as a JSON array in `steps.deploy-to-processor.outputs.server_ips`.
+The IPs will be output as a JSON array in `steps.<step_name>.outputs.server_ips`. eg the above example will output to `steps.deploy-to-processor.outputs.server_ips`
 
 ### Use as a matrix
 
