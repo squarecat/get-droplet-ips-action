@@ -6,7 +6,7 @@ Useful for deploying to every droplet with a certain tag.
 steps:
   - name: 📫 Fetch deploy IPs for processors
     id: deploy-to-processor    
-    uses: squarecat/get-droplet-ips-action@1.0.3
+    uses: squarecat/get-droplet-ips-action@1.0.5
     with:
       digital-ocean-key: ${{ secrets.DO_API_KEY }}     # DigitalOcean API key
       tag: processor                                   # tag to search for
@@ -29,7 +29,7 @@ jobs:
       - name: 📫 Fetch deploy IPs for processors
         id: deploy-to-processor
         if: ${{ github.event.inputs.app == 'processor' }}
-        uses: squarecat/get-droplet-ips-action@1.0.3
+        uses: squarecat/get-droplet-ips-action@1.0.5
         with:
           digital-ocean-key: ${{ secrets.DO_API_KEY }}
           tag: processor
